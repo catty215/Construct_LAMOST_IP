@@ -11,7 +11,7 @@ def get_lsf(spec_id, label1_time, label2_fiber, label3_line):
                        representing one of the 16 LAMOST spectrographs.
         label1_time (int): Time label in minutes since 00:00:00 on November 17, 1858.
                              This value corresponds to the timestamp in the LAMOST spectrum filename.
-        label2_fiber (int): Fiber ID ranging from 1 to 4000, representing one of the fibers
+        label2_fiber (int): Fiber ID ranging from 1 to 250, representing one of the fibers
                             in a spectrograph.
         label3_line (float): Central wavelength of the LSF profile. Valid values include:
                              For blue arm: 4046.565, 4358.335, 4678.149, 4799.912, 5085.822, 5460.750, 5790.670
@@ -63,7 +63,7 @@ def get_lsf(spec_id, label1_time, label2_fiber, label3_line):
 
         NN_coeffs = (w_array_0, w_array_1, w_array_2, b_array_0, b_array_1, b_array_2, x_min, x_max)
 
-        real_labels = np.array([label1_time, label2_fiber, label3_line])
+        real_labels = np.array([label1_time, label2_fiber-1, label3_line])
         scaled_labels = (real_labels - x_min) / (x_max - x_min) - 0.5
 
         # get the flux
