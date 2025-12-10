@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='get_LSF',
+    name='Construct_LAMOST_IP',
     version='0.1.0',
-    description='LAMOST LSF prediction using neural networks',
+    description="LAMOST's IP recover using neural networks",
     author='Qian Liu',
     author_email='liuqian@bao.ac.cn',
     packages=find_packages(),
