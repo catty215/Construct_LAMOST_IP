@@ -8,7 +8,7 @@ def get_IP(spec_id, label1_time, label2_fiber, label3_line):
     Retrieve the IP
 
     Parameters:
-        spec_id (str or int): Spectrograph ID, a two-digit string or int ranging from '01' to '16',
+        spec_id (int): Spectrograph ID, ranging from 1 to 16,
                        representing one of the 16 LAMOST spectrographs.
         label1_time (int): Time label in minutes since 00:00:00 on November 17, 1858.
                              This value corresponds to the timestamp in the LAMOST spectrum filename.
@@ -45,10 +45,10 @@ def get_IP(spec_id, label1_time, label2_fiber, label3_line):
     current_script_dir = os.path.dirname(current_script_path)
     
     if label3_line > 5800:
-        NN_path = os.path.join(current_script_dir, '..', 'data', f'NN_normalized_spectra_{spec_id}_r_{file_year}.npz')
+        NN_path = os.path.join(current_script_dir, '..', 'data', f'NN_normalized_spectra_{spec_id:02d}_r_{file_year}.npz')
         a, b = label3_line - 9.163, label3_line + 9.833
     else:
-        NN_path = os.path.join(current_script_dir, '..', 'data', f'NN_normalized_spectra_{spec_id}_b_{file_year}.npz')
+        NN_path = os.path.join(current_script_dir, '..', 'data', f'NN_normalized_spectra_{spec_id:02d}_b_{file_year}.npz')
         a, b = label3_line - 8.335, label3_line + 9.25
 
     # get the wavelength range for the profile
@@ -80,3 +80,4 @@ def get_IP(spec_id, label1_time, label2_fiber, label3_line):
         print(f"Error loading model from {NN_path}: {str(e)}")
 
         return None, None
+
