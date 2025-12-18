@@ -1,4 +1,5 @@
 import numpy as np
+import os
 from .utils import convert_minutes_to_datetime
 from .nn_model import get_spectrum_from_neural_net
 
@@ -40,11 +41,14 @@ def get_IP(spec_id, label1_time, label2_fiber, label3_line):
     else:
         file_year = date.year
 
+    current_script_path = os.path.abspath(__file__)
+    current_script_dir = os.path.dirname(current_script_path)
+    
     if label3_line > 5800:
-        NN_path = f'/data/liuqian/NN_training/{file_year}/NN_normalized_spectra_{spec_id}_r_{file_year}.npz'
+        NN_path = os.path.join(current_script_dir, '..', 'data', f'NN_normalized_spectra_{spec_id}_r_{file_year}.npz')
         a, b = label3_line - 9.163, label3_line + 9.833
     else:
-        NN_path = f'/data/liuqian/NN_training/{file_year}/NN_normalized_spectra_{spec_id}_b_{file_year}.npz'
+        NN_path = os.path.join(current_script_dir, '..', 'data', f'NN_normalized_spectra_{spec_id}_b_{file_year}.npz')
         a, b = label3_line - 8.335, label3_line + 9.25
 
     # get the wavelength range for the profile
@@ -74,4 +78,5 @@ def get_IP(spec_id, label1_time, label2_fiber, label3_line):
 
     except Exception as e:
         print(f"Error loading model from {NN_path}: {str(e)}")
+
         return None, None
