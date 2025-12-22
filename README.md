@@ -10,19 +10,21 @@ git clone https://github.com/catty215/Construct_LAMOST_IP.git
 pip install -e .
 
 
-## 2.Usage Example:
+## 2.Usage Example (in python):
 
 from IP_construct import get_IP
 
 wl, flux = get_IP(spec_id, label1_time, label2_fiber, label3_line)
 
-spec_id (int): Spectrograph ID, ranging from 1 to 16, representing one of the 16 LAMOST spectrographs.
+Note:
 
-label1_time (int): Time label in minutes since 00:00:00 on November 17, 1858. This value corresponds to the timestamp in the LAMOST spectrum filename.
+* spec_id (int): Spectrograph ID, ranging from 1 to 16, representing one of the 16 LAMOST spectrographs.
 
-label2_fiber (int): Fiber ID ranging from 1 to 250, representing one of the fibers in a spectrograph.
+* label1_time (int): Time label in minutes since 00:00:00 on November 17, 1858. This value corresponds to the timestamp in the LAMOST spectrum filename.
 
-label3_line (float): Central wavelength of the IP. Valid values include:
+* label2_fiber (int): Fiber ID ranging from 1 to 250, representing one of the fibers in a spectrograph.
+
+* label3_line (float): Central wavelength of the IP. Valid values include:
 
 For blue arm: 4046.565, 4358.335, 4678.149, 4799.912, 5085.822, 5460.750, 5790.670
 
@@ -33,5 +35,6 @@ In theory, any wavelength can be used; however, some wavelengths do not correspo
 ## 3.Citation
 
 This package is developed based on our ongoing research. If you use this package or related code in your research work, please cite our upcoming paper once it is published. The citation information will be updated here promptly after submission and acceptance.
+
 
 
