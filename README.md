@@ -1,16 +1,16 @@
-Construct_LAMOST_IP
+## Construct_LAMOST_IP
 
 Tools for interpolating the IP of LAMOST with neural networks.
 
 
-Download and Install:
+## Download and Install:
 
 git clone https://github.com/catty215/Construct_LAMOST_IP.git
 
 pip install -e .
 
 
-Usage Example:
+## Usage Example:
 
 from IP_construct import get_IP
 
@@ -36,5 +36,6 @@ If you use the package or related code in your research work, please cite our pa
   year={XXXX},
   doi={10.1093/mnras/xxxxxx}
 }
+
 
 
