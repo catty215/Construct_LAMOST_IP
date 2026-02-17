@@ -9,8 +9,9 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
-        'numpy',  # 只写包名，不写版本号（完全合规）
+        'numpy',
     ],
     license='MIT',
 )
+
 
