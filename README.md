@@ -34,12 +34,5 @@ In theory, any wavelength can be used; however, some wavelengths do not correspo
 
 ## 3.Citation
 
-This package is developed based on our ongoing research. If you use this package or related code in your research work, please cite the corresponding paper once it is published.
-Citation information will be provided here in the future.
-
-
-
-
-
-
-
+This package is developed based on our published research.If you use this package or related code in your research work, please cite the corresponding paper:
+ DOI: 10.3847/1538-3881/ae4ebe
